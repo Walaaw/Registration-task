@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <section class="d-flex justify-content-center align-items-center m-3 ">
+        <div class="box p-3 w-75 m-auto ">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="item">
+                        <img src="./images/Image Placeholder.png" height="536px"  alt="welcome image" class="w-100">
+                    </div>
+                </div>
+                <div class="col-md-6 ">
+                    <div class="item py-5 px-3 ">
+                        <p>Create Account</p>
+                        <p>Go ahead and sign up, let everyone know how awesome you are!</p>
+                        <div class=" inputForm d-flex justify-content-between align-items-center bg-light p-2 my-3 ">
+                            <i class="fa-regular fa-user p-1 mx-2 icon position-relative"></i>
+                            <input type="text" id="userInputName" placeholder="User name" class="form-control  form-control-sm bg-light ">
+                        </div>
+                        <p id="usernameAlert" class="d-none text-danger ms-5 ">include at least 3 letters starting with capital</p>
+                        <div class=" inputForm d-flex justify-content-between align-items-center bg-light p-2 my-3 ">
+                            <i class="fa-regular fa-envelope p-1 mx-2 icon position-relative"></i>
+                            <input type="email" id="userInputEmail" placeholder="Email" class="form-control  form-control-sm bg-light ">
+                        </div>
+                        <p id="emailAlert" class="d-none text-danger ms-5 "> mst be example@gmail.com</p>
+                        <div class=" inputForm d-flex justify-content-between align-items-center bg-light p-2 my-3 ">
+                            <i class="fa-solid fa-lock p-1 mx-2 icon position-relative"></i>
+                            <input type="password" id="userInputPassword" placeholder="Password" class="form-control  form-control-sm bg-light ">
+                        </div>
+                        <p id="passwordlAlert" class="d-none text-danger ms-5 fs"> Password required and should be at least 8 character</p>
+                        <div class=" inputForm d-flex justify-content-between align-items-center bg-light p-2 my-3 ">
+                            <i class="fa-solid fa-lock p-1 mx-2 icon position-relative"></i>
+                            <input type="password" id="userInputConfirmPasord" placeholder="Confirm Password" class="form-control  form-control-sm bg-light ">
+                        </div>
+                        <p id="passwordConfirmlAlert" class="d-none text-danger ms-5 fs"> Doesn't Match  </p>
+                        <button type="submit" class="submit w-100 px-3 py-1" onclick="signUp()"> <a  id="login"> Create Account</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
