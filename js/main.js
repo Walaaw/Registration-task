@@ -131,15 +131,18 @@ async function postData(url , data) {
     }
     else{
         localStorage.setItem("email",final.email);
-        getEmail();
         location.href="login.html";
+      
        return true
     }
   } 
 const getEmail=() =>{
 let userEmail=localStorage.getItem("email");
  document.getElementById('email').innerHTML=userEmail;
+ console.log(userEmail);
 }
+getEmail()
 
 
-  
+
+
