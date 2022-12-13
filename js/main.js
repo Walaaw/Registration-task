@@ -20,7 +20,7 @@ if( validuserinputs ){
     }
     AllUsersData.push(userData);
     localStorage.setItem("allusersdata",JSON.stringify(AllUsersData));
-    postData('https://goldblv.com/api/hiring/tasks/register',userData)  
+    getApiData('https://goldblv.com/api/hiring/tasks/register',userData)  
 }
 
 }
@@ -100,7 +100,7 @@ const  validuserinputs=()=>{
         return false;
     }
 }
-async function postData(url , data) {
+async function getApiData(url , data) {
     const response = await fetch(url, {
       method: 'POST', 
       mode: 'cors',
@@ -112,25 +112,25 @@ async function postData(url , data) {
       },
       body: JSON.stringify(data)
     });
-    let final = await response.json()
-    console.log(final);
-    if(final.errors){
-        if(final.errors.username){
+    let errorsData = await response.json()
+    console.log(errorsData);
+    if(errorsData.errors){
+        if(errorsData.errors.username){
             let userNamealert=document.getElementById("usernameAlert");
-            userNamealert.innerHTML=final.errors.username;
+            userNamealert.innerHTML=errorsData.errors.username;
         }
-        if(final.errors.email){
+        if(errorsData.errors.email){
             let emailAlert=document.getElementById("emailAlert");
-            emailAlert.innerHTML=final.errors.email;
+            emailAlert.innerHTML=errorsData.errors.email;
         }
-        if(final.errors.password){
+        if(errorsData.errors.password){
             let passwordlAlert=document.getElementById("passwordlAlert");
-            passwordlAlert.innerHTML=final.errors.password;
+            passwordlAlert.innerHTML=errorsData.errors.password;
         }
         return false
     }
     else{
-        localStorage.setItem("email",final.email);
+        localStorage.setItem("email",errorsData.email);
         location.href="login.html";
       
        return true
